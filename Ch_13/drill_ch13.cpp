@@ -10,7 +10,7 @@ int main()
     win.wait_for_button();
     win.set_label("My window");
 
-    // add grid on leftmost 800-by-800 part
+
     Lines grid;
     int x_size = 800;
     int y_size = 800;
@@ -19,37 +19,37 @@ int main()
         grid.add(Point(0,i),Point(x_size,i));
     }
     win.attach(grid);
-    //win.resize(1000,800);
+ 
     win.wait_for_button();
 
-    // make squares on the diagonal red
+    
     Vector_ref<Graph_lib::Rectangle> vr;
     for (int i = 0; i<8; ++i) {
         vr.push_back(new Graph_lib::Rectangle(Point(i*100,i*100),101,101));
         vr[vr.size()-1].set_fill_color(Color::red);
         win.attach(vr[vr.size()-1]);
     }
-    //win.resize(1000,800);
+ 
     win.wait_for_button();
 
-    // place 3 copies of a 200-by-200 image, don't cover the red squares
-    Image plane1(Point(200,0),"Ch_13/akep2.jpg");
-    plane1.set_mask(Point(200,0),200,200);
-    win.attach(plane1);
-    Image plane2(Point(500,200),"Ch_13/akep2.jpg");
-    plane2.set_mask(Point(200,0),200,200);
-    win.attach(plane2);
-    Image plane3(Point(100,500),"Ch_13/akep2.jpg");
-    plane3.set_mask(Point(200,0),200,200);
-    win.attach(plane3);
-    //win.resize(1000,800);
+  
+    Image akep1(Point(200,0),"Ch_13/akep2.jpg");
+    akep1.set_mask(Point(200,0),200,200);
+    win.attach(akep1);
+    Image akep2(Point(500,200),"Ch_13/akep2.jpg");
+    akep2.set_mask(Point(200,0),200,200);
+    win.attach(akep2);
+    Image akep3(Point(100,500),"Ch_13/akep2.jpg");
+    akep3.set_mask(Point(200,0),200,200);
+    win.attach(akep3);
+    
     win.wait_for_button();
 
-    // add a 100-by-100 image, have it move around
-    Image snow(Point(0,0),"Ch_13/akep.jpeg");
-    snow.set_mask(Point(110,70),100,100);
-    win.attach(snow);
-    //win.resize(1000,800);
+ 
+    Image akep(Point(0,0),"Ch_13/akep.jpeg");
+    akep.set_mask(Point(110,70),100,100);
+    win.attach(akep);
+    
     win.wait_for_button();
 
     int x = 0;
@@ -59,10 +59,10 @@ int main()
     while (true) {
         x = randint(8);
         y = randint(8);
-        dx = 100*x - snow.point(0).x;
-        dy = 100*y - snow.point(0).y;
-        snow.move(dx,dy);
-        //win.resize(1000,800);
+        dx = 100*x - akep.point(0).x;
+        dy = 100*y - akep.point(0).y;
+        akep.move(dx,dy);
+        
         win.wait_for_button();
     }
 }
