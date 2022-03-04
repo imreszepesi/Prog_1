@@ -4,13 +4,10 @@
 int main()
 {
     try {
-
     Point tl(300,50);
     Simple_window win(tl,1000,800,"My window");
     win.wait_for_button();
     win.set_label("My window");
-
-
     Lines grid;
     int x_size = 800;
     int y_size = 800;
@@ -19,7 +16,6 @@ int main()
         grid.add(Point(0,i),Point(x_size,i));
     }
     win.attach(grid);
- 
     win.wait_for_button();
 
     
@@ -33,45 +29,46 @@ int main()
     win.wait_for_button();
 
   
-    Image akep1(Point(200,0),"Ch_13/akep2.jpg");
-    akep1.set_mask(Point(200,0),200,200);
+    Image akep1(Point(200,0),"Ch_13/palank.jpg");
+    //akep1.set_mask(Point(200,0),200,200);
     win.attach(akep1);
-    Image akep2(Point(500,200),"Ch_13/akep2.jpg");
-    akep2.set_mask(Point(200,0),200,200);
+    Image akep2(Point(500,200),"Ch_13/palank.jpg");
+    //akep2.set_mask(Point(200,0),200,200);
     win.attach(akep2);
-    Image akep3(Point(100,500),"Ch_13/akep2.jpg");
-    akep3.set_mask(Point(200,0),200,200);
+    Image akep3(Point(100,500),"Ch_13/palank.jpg");
+    //akep3.set_mask(Point(200,0),200,200);
     win.attach(akep3);
     
     win.wait_for_button();
-
- 
-    Image akep(Point(0,0),"Ch_13/akep.jpeg");
-    akep.set_mask(Point(110,70),100,100);
+    Image akep(Point(0,0),"Ch_13/kosarlabda.jpg");
+    //akep.set_mask(Point(110,70),100,100);
     win.attach(akep);
     
     win.wait_for_button();
-
+    int counter = 0;
     int x = 0;
     int y = 0;
     int dx = 0;
     int dy = 0;
-    while (true) {
+    
+    while (counter < 10) {
         x = randint(8);
         y = randint(8);
         dx = 100*x - akep.point(0).x;
         dy = 100*y - akep.point(0).y;
         akep.move(dx,dy);
-        
+        counter = counter + 1;
         win.wait_for_button();
+       
+        
     }
 }
 catch (exception& e) {
-    cerr << "exception: " << e.what() << endl;
+    cerr << "Hiba: " << e.what() << endl;
     keep_window_open();
 }
 catch (...) {
-    cerr << "exception\n";
+    cerr << "Hiba\n";
     keep_window_open();
 }
     
