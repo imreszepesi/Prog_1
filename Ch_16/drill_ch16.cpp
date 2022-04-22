@@ -1,6 +1,4 @@
-/*
-    g++ -w -Wall -std=c++11 GUI/Graph.cpp GUI/Window.cpp GUI/GUI.cpp GUI/Simple_window.cpp drill16.cpp `fltk-config --ldflags --use-images` -o a.out
-*/
+
 
 #include "../source/GUI.h"
 #include <iostream>
