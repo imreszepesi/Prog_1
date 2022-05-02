@@ -21,5 +21,8 @@ Getterekkel elérjük a privát dolgokat.
 Val mutatja hogy nem tudjuk miyen érték lesz
 Template lehetővé teszi hogy egy függvény vagy osztály sok különböző adattípuson dolgozzon anélkül, hogy mindegyikhez újraírnák.
 
-20 drill
-Copy nem csak azt jelenteni hogy átmásolja hanem úgyan arra memóriára fog mutatni
+
+Map arra szolgál hogy kulcs értéket hozunk létre
+Map kettő adatot vár a stringet meg az intet
+//Map automatikusan rendezi a saját elemeit
+
