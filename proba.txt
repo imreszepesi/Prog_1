@@ -21,3 +21,5 @@ Getterekkel elérjük a privát dolgokat.
 Val mutatja hogy nem tudjuk miyen érték lesz
 Template lehetővé teszi hogy egy függvény vagy osztály sok különböző adattípuson dolgozzon anélkül, hogy mindegyikhez újraírnák.
 
+20 drill
+Copy nem csak azt jelenteni hogy átmásolja hanem úgyan arra memóriára fog mutatni
